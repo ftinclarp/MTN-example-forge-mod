@@ -19,3 +19,9 @@ wrapper is a modern Gradle (currently 9.3.1) and is *not* compatible with
 ForgeGradle 1.2; it is kept only so the wrapper files exist in the repo.
 Building this mod is intentionally not set up — this project is a reference
 input for the porting tool, not a maintained build.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+Based on GTNewHorizons/ExampleMod1.7.10 (permissive OSS template).
