@@ -1,0 +1,9 @@
+# MTN-example-forge-mod
+
+Minimal "Hello World" Forge 1.7.10 mod: a single `@Mod` entry point
+(`com.mtn.example.ExampleMod`) with an empty preInit/init/postInit,
+an empty CommonProxy/ClientProxy pair, and a minimal `mcmod.info`.
+
+This repository is the reference **input** for
+[Mod-Transmuder-Next](https://github.com/dev/Mod-Transmuder-Next) —
+it is not maintained as an independent mod.
