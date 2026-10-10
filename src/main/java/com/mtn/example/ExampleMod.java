@@ -5,6 +5,9 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 
 @Mod(modid = "mtnexample", name = "MTN Example", version = "1.0")
 public class ExampleMod {
@@ -14,6 +17,20 @@ public class ExampleMod {
 
     public ExampleMod() {
         System.out.println("MTN-EXAMPLE ExampleMod.<init>");
+    }
+
+    /** Exercises the layer's NBT + ItemStack + Blocks/Items API. */
+    public static void exerciseNbt() {
+        ItemStack stack = new ItemStack(ExampleMod.MY_ITEM, 42);
+        NBTTagCompound tag = new NBTTagCompound();
+        tag.setString("owner", "MTN");
+        tag.setInteger("tier", 3);
+        stack.setTagCompound(tag);
+
+        System.out.println("MTN-EXAMPLE stack=" + stack);
+        System.out.println("MTN-EXAMPLE tag.owner=" + tag.getString("owner"));
+        System.out.println("MTN-EXAMPLE tag.tier=" + tag.getInteger("tier"));
+        System.out.println("MTN-EXAMPLE blocks.air=" + Blocks.air.getUnlocalizedName());
     }
 
     @SidedProxy(clientSide = "com.mtn.example.ClientProxy", serverSide = "com.mtn.example.CommonProxy")

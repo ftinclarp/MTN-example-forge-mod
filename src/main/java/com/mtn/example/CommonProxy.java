@@ -11,6 +11,7 @@ public class CommonProxy {
         System.out.println("MTN-EXAMPLE preInit");
         GameRegistry.registerBlock(ExampleMod.MY_BLOCK, "myblock");
         GameRegistry.registerItem(ExampleMod.MY_ITEM, "myitem");
+        ExampleMod.exerciseNbt();
     }
 
     public void init(FMLInitializationEvent event) {
