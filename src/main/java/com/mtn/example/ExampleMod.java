@@ -9,6 +9,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = "mtnexample", name = "MTN Example", version = "1.0")
 public class ExampleMod {
 
+    public static final MyBlock MY_BLOCK = new MyBlock();
+    public static final MyItem MY_ITEM = new MyItem();
+
     public ExampleMod() {
         System.out.println("MTN-EXAMPLE ExampleMod.<init>");
     }
