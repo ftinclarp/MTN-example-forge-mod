@@ -33,6 +33,16 @@ public class ExampleMod {
         System.out.println("MTN-EXAMPLE blocks.air=" + Blocks.air.getUnlocalizedName());
     }
 
+    /** Exercises the layer's TileEntity + IInventory API via a chest. */
+    public static void exerciseChest() {
+        MyChest chest = new MyChest();
+        chest.setInventorySlotContents(0, new ItemStack(MY_ITEM, 7));
+        System.out.println("MTN-EXAMPLE chest.slot0="
+                + chest.getStackInSlot(0).getCount());
+        System.out.println("MTN-EXAMPLE chest.size="
+                + chest.getSizeInventory());
+    }
+
     @SidedProxy(clientSide = "com.mtn.example.ClientProxy", serverSide = "com.mtn.example.CommonProxy")
     public static CommonProxy proxy;
 
