@@ -14,6 +14,7 @@ public class ExampleMod {
 
     public static final MyBlock MY_BLOCK = new MyBlock();
     public static final MyItem MY_ITEM = new MyItem();
+    public static final MyChestBlock MY_CHEST_BLOCK = new MyChestBlock();
 
     /** R3a: the mod's simple network channel (messages registered in CommonProxy.preInit). */
     public static final cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper NETWORK =

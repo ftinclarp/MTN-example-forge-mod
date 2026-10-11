@@ -13,8 +13,12 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         System.out.println("MTN-EXAMPLE preInit");
         GameRegistry.registerBlock(ExampleMod.MY_BLOCK, "myblock");
+        GameRegistry.registerBlock(ExampleMod.MY_CHEST_BLOCK, "mychest_block");
         GameRegistry.registerItem(ExampleMod.MY_ITEM, "myitem");
         GameRegistry.registerTileEntity(MyChest.class, "mychest");
+
+        // R3b: the chest GUI handler.
+        NetworkRegistry.INSTANCE.registerGuiHandler(ExampleMod.class, MyGuiHandler.INSTANCE);
 
         // R3a: register a test message (network smoke test). Do NOT send yet.
         ExampleMod.NETWORK.registerMessage((msg, ctx) -> {
