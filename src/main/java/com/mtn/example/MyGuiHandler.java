@@ -33,6 +33,6 @@ public class MyGuiHandler implements IGuiHandler {
 
     public static void open(EntityPlayer player, int id, World world,
             int x, int y, int z) {
-        NetworkRegistry.INSTANCE.openGui(INSTANCE, id, player, world, x, y, z);
+        NetworkRegistry.INSTANCE.openGui(ExampleMod.class, id, player, world, x, y, z);
     }
 }
