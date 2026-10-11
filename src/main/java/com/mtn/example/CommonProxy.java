@@ -18,7 +18,7 @@ public class CommonProxy {
         GameRegistry.registerTileEntity(MyChest.class, "mychest");
 
         // R3b: the chest GUI handler.
-        NetworkRegistry.INSTANCE.registerGuiHandler(ExampleMod.class, MyGuiHandler.INSTANCE);
+        NetworkRegistry.INSTANCE.registerGuiHandler("mtnexample", MyGuiHandler.INSTANCE);
 
         // R3a: register a test message (network smoke test). Do NOT send yet.
         ExampleMod.NETWORK.registerMessage((msg, ctx) -> {

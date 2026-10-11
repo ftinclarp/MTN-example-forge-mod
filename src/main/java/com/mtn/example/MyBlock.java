@@ -1,16 +1,19 @@
 package com.mtn.example;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class MyBlock extends Block {
 
     public MyBlock() {
-        super("myblock");
-        setCreativeTab(CreativeTabs.TAB_BLOCKS);
-    }
-
-    public MyBlock setCreativeTab(CreativeTabs tab) {
-        return this;
+        super(Material.rock);
+        setBlockName("myblock");
+        setBlockTextureName("mtnexample:myblock");
+        setCreativeTab(CreativeTabs.tabBlock);
+        setHardness(1.5F);
+        setResistance(10.0F);
+        setStepSound(Block.soundTypeStone);
+        setHarvestLevel("pickaxe", 1);
     }
 }

@@ -1,6 +1,8 @@
 package com.mtn.example;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -12,8 +14,13 @@ import net.minecraft.world.World;
 public class MyChestBlock extends BlockContainer {
 
     public MyChestBlock() {
-        super("mychest_block");
-        // Note: layer BlockContainer ctor styles (@BlockMaterial removed in 1.7.10).
+        super(Material.wood);
+        setBlockName("mychest_block");
+        setBlockTextureName("mtnexample:mychest_block");
+        setHardness(2.5F);
+        setResistance(2.5F);
+        setStepSound(Block.soundTypeWood);
+        setHarvestLevel("axe", 0);
     }
 
     public TileEntity createNewTileEntity(World world, int meta) {
@@ -23,6 +30,7 @@ public class MyChestBlock extends BlockContainer {
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z,
             EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+        System.out.println("MTN-EXAMPLE MyChestBlock.onBlockActivated isRemote=" + world.isRemote);
         if (world.isRemote) {
             return true; // server opens the GUI; client just consumes.
         }

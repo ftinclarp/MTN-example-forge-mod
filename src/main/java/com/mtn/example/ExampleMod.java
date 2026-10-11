@@ -43,7 +43,7 @@ public class ExampleMod {
         MyChest chest = new MyChest();
         chest.setInventorySlotContents(0, new ItemStack(MY_ITEM, 7));
         System.out.println("MTN-EXAMPLE chest.slot0="
-                + chest.getStackInSlot(0).getCount());
+                + chest.getStackInSlot(0).stackSize);
         System.out.println("MTN-EXAMPLE chest.size="
                 + chest.getSizeInventory());
     }

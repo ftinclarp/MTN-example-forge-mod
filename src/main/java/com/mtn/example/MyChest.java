@@ -9,7 +9,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class MyChest extends TileEntity implements IInventory {
 
-    private ItemStack[] slots = new ItemStack[9];
+    private ItemStack[] slots = new ItemStack[27];
     private String customName = "My Chest";
 
     @Override
@@ -22,10 +22,10 @@ public class MyChest extends TileEntity implements IInventory {
     public ItemStack decrStackSize(int i, int count) {
         if (slots[i] == null) return null;
         ItemStack s = slots[i];
-        if (s.getCount() <= count) { slots[i] = null; return s; }
+        if (s.stackSize <= count) { slots[i] = null; return s; }
         ItemStack split = s.copy();
-        split.setCount(count);
-        s.setCount(s.getCount() - count);
+        split.stackSize = count;
+        s.stackSize -= count;
         return split;
     }
 
@@ -60,7 +60,7 @@ public class MyChest extends TileEntity implements IInventory {
             if (slots[i] == null) continue;
             NBTTagCompound entry = new NBTTagCompound();
             entry.setInteger("Slot", i);
-            entry.setInteger("Count", slots[i].getCount());
+            entry.setInteger("Count", slots[i].stackSize);
             list.appendTag(entry);
         }
         nbt.setTag("Items", list);

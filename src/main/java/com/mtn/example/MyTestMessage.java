@@ -2,7 +2,7 @@ package com.mtn.example;
 
 import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
-import net.minecraft.network.FriendlyByteBuf;
+import io.netty.buffer.ByteBuf;
 
 /**
  * R3a network smoke-test message. Only REGISTERED, not sent yet — it is
@@ -20,12 +20,12 @@ public class MyTestMessage implements IMessage {
     }
 
     @Override
-    public void fromBytes(net.minecraft.network.FriendlyByteBuf buf) {
+    public void fromBytes(ByteBuf buf) {
         text = ByteBufUtils.readUTF8String(buf);
     }
 
     @Override
-    public void toBytes(net.minecraft.network.FriendlyByteBuf buf) {
+    public void toBytes(ByteBuf buf) {
         ByteBufUtils.writeUTF8String(buf, text);
     }
 
