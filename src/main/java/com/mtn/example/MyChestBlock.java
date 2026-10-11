@@ -16,7 +16,6 @@ public class MyChestBlock extends BlockContainer {
         // Note: layer BlockContainer ctor styles (@BlockMaterial removed in 1.7.10).
     }
 
-    @Override
     public TileEntity createNewTileEntity(World world, int meta) {
         return new MyChest();
     }
